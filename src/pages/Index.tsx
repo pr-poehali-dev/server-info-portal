@@ -36,8 +36,11 @@ const Index = () => {
             <h1 className="text-6xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
               Russian Town
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Добро пожаловать на лучший сервер Brick Rigs в России
+            <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto">
+              Лучший сервер Brick Rigs на территории России
+            </p>
+            <p className="text-lg text-muted-foreground/80 mb-8 max-w-2xl mx-auto">
+              Лучшее РП только у нас! Пароль для входа только в Discord
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button onClick={() => scrollToSection('discord')} size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8">
@@ -63,9 +66,9 @@ const Index = () => {
                 <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
                   <Icon name="Users" size={24} className="text-primary" />
                 </div>
-                <CardTitle>Активное комьюнити</CardTitle>
+                <CardTitle>Лучшее РП в России</CardTitle>
                 <CardDescription className="text-muted-foreground">
-                  Дружелюбные игроки всегда готовы помочь новичкам
+                  Уникальные ролевые игры и сценарии только на нашем сервере
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -75,9 +78,9 @@ const Index = () => {
                 <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mb-4">
                   <Icon name="Zap" size={24} className="text-secondary" />
                 </div>
-                <CardTitle>Стабильная работа</CardTitle>
+                <CardTitle>Защищённый вход</CardTitle>
                 <CardDescription className="text-muted-foreground">
-                  Сервер работает 24/7 без лагов и перебоев
+                  Пароль для подключения выдаётся только в Discord сервере
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -87,9 +90,9 @@ const Index = () => {
                 <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
                   <Icon name="Trophy" size={24} className="text-primary" />
                 </div>
-                <CardTitle>События и турниры</CardTitle>
+                <CardTitle>Активное комьюнити</CardTitle>
                 <CardDescription className="text-muted-foreground">
-                  Регулярные мероприятия с призами для игроков
+                  Дружелюбные игроки и администрация всегда на связи
                 </CardDescription>
               </CardHeader>
             </Card>

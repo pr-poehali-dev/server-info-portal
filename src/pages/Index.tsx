@@ -189,7 +189,7 @@ const Index = () => {
                 <Button 
                   size="lg" 
                   className="w-full bg-primary hover:bg-primary/90 mt-6"
-                  onClick={() => window.open('https://discord.gg/your-server-link', '_blank')}
+                  onClick={() => window.open('https://discord.gg/z9UgcvMh', '_blank')}
                 >
                   <Icon name="MessageCircle" size={20} className="mr-2" />
                   Присоединиться к Discord

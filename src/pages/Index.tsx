@@ -103,6 +103,50 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-900/20 via-red-900/20 to-blue-900/20">
+        <div className="container mx-auto text-center max-w-4xl">
+          <div className="mb-8">
+            <div className="text-8xl mb-6 animate-fade-in">🇷🇺</div>
+            <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-white to-red-400 bg-clip-text text-transparent">
+              Фракции
+            </h2>
+          </div>
+          <Card className="bg-card/80 backdrop-blur border-border">
+            <CardHeader>
+              <CardTitle className="text-3xl text-primary">Открытые фракции</CardTitle>
+              <CardDescription className="text-lg text-muted-foreground mt-4">
+                Присоединяйся к силовым структурам Российской Федерации
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+                <div className="p-4 bg-primary/10 rounded-lg border border-primary/30 hover:bg-primary/20 transition-colors">
+                  <p className="text-xl font-bold text-primary">ФСБ</p>
+                </div>
+                <div className="p-4 bg-primary/10 rounded-lg border border-primary/30 hover:bg-primary/20 transition-colors">
+                  <p className="text-xl font-bold text-primary">ССО</p>
+                </div>
+                <div className="p-4 bg-primary/10 rounded-lg border border-primary/30 hover:bg-primary/20 transition-colors">
+                  <p className="text-xl font-bold text-primary">МВД</p>
+                </div>
+                <div className="p-4 bg-primary/10 rounded-lg border border-primary/30 hover:bg-primary/20 transition-colors">
+                  <p className="text-xl font-bold text-primary">ДПС</p>
+                </div>
+                <div className="p-4 bg-primary/10 rounded-lg border border-primary/30 hover:bg-primary/20 transition-colors">
+                  <p className="text-xl font-bold text-primary">СОБР</p>
+                </div>
+                <div className="p-4 bg-primary/10 rounded-lg border border-primary/30 hover:bg-primary/20 transition-colors">
+                  <p className="text-xl font-bold text-primary">Росгвардия</p>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground mt-6">
+                Получи доступ к уникальной технике и экипировке каждой фракции
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       <section id="rules" className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold text-center mb-12">

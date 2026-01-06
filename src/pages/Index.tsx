@@ -150,7 +150,7 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto text-center max-w-4xl">
           <h2 className="text-5xl font-bold mb-8 text-muted-foreground/60">
-            Неоткрытые фракции
+            Закрытые фракции на текущий момент
           </h2>
           <p className="text-lg text-muted-foreground/50 mb-8">
             Скоро будут доступны для вступления

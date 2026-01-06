@@ -39,8 +39,11 @@ const Index = () => {
             <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto">
               Лучший сервер Brick Rigs на территории России
             </p>
-            <p className="text-lg text-muted-foreground/80 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground/80 mb-2 max-w-2xl mx-auto">
               Лучшее РП только у нас! Пароль для входа только в Discord
+            </p>
+            <p className="text-sm text-muted-foreground/60 mb-8 max-w-2xl mx-auto">
+              Основатель проекта: <span className="text-primary font-semibold">wagners_tourist</span>
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button onClick={() => scrollToSection('discord')} size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8">
@@ -175,6 +178,14 @@ const Index = () => {
                 <CardDescription className="text-base text-muted-foreground">
                   Здесь ты найдешь всё необходимое для игры
                 </CardDescription>
+                <div className="mt-4 p-3 bg-primary/10 rounded-lg border border-primary/20">
+                  <p className="text-sm text-muted-foreground">
+                    Для входа в Discord свяжись с основателем в Telegram:
+                  </p>
+                  <p className="text-base font-semibold text-primary mt-1">
+                    @FSB_tourist
+                  </p>
+                </div>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center gap-3 text-left">

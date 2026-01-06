@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -6,8 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 import { useNavigate } from "react-router-dom";
-import AuthDialog from "@/components/AuthDialog";
-import { useToast } from "@/hooks/use-toast";
 
 interface ForumTopic {
   id: number;
@@ -22,48 +20,8 @@ interface ForumTopic {
 
 const Forum = () => {
   const navigate = useNavigate();
-  const { toast } = useToast();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [showNewTopicForm, setShowNewTopicForm] = useState(false);
-  const [showAuthDialog, setShowAuthDialog] = useState(false);
-  const [currentUser, setCurrentUser] = useState<any>(null);
-
-  useEffect(() => {
-    const storedUser = localStorage.getItem('user');
-    const storedToken = localStorage.getItem('token');
-    if (storedUser && storedToken) {
-      setCurrentUser(JSON.parse(storedUser));
-    }
-  }, []);
-
-  const handleAuthSuccess = (user: any, token: string) => {
-    setCurrentUser(user);
-    localStorage.setItem('user', JSON.stringify(user));
-    localStorage.setItem('token', token);
-  };
-
-  const handleLogout = () => {
-    setCurrentUser(null);
-    localStorage.removeItem('user');
-    localStorage.removeItem('token');
-    toast({
-      title: 'Выход выполнен',
-      description: 'Вы вышли из аккаунта'
-    });
-  };
-
-  const handleCreateTopic = () => {
-    if (!currentUser) {
-      setShowAuthDialog(true);
-      toast({
-        title: 'Требуется авторизация',
-        description: 'Войдите или зарегистрируйтесь для создания тем',
-        variant: 'destructive'
-      });
-      return;
-    }
-    setShowNewTopicForm(true);
-  };
 
   const categories = [
     { id: 'support', name: 'Техническая поддержка', icon: 'Headphones', color: 'text-primary' },
@@ -152,29 +110,10 @@ const Forum = () => {
               <Icon name="Home" size={18} className="mr-2" />
               Главная
             </Button>
-            {currentUser ? (
-              <>
-                {(currentUser.role === 'creator' || currentUser.role === 'admin') && (
-                  <Button onClick={() => navigate('/admin')} variant="secondary" size="sm">
-                    <Icon name="Settings" size={18} className="mr-2" />
-                    Админ-панель
-                  </Button>
-                )}
-                <div className="flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-lg">
-                  {currentUser.role === 'creator' && <Icon name="Crown" size={16} className="text-primary" />}
-                  {currentUser.role === 'admin' && <Icon name="Shield" size={16} className="text-secondary" />}
-                  <span className="text-sm font-medium">{currentUser.display_name}</span>
-                </div>
-                <Button onClick={handleLogout} variant="outline" size="sm">
-                  Выход
-                </Button>
-              </>
-            ) : (
-              <Button onClick={() => setShowAuthDialog(true)} variant="outline" size="sm">
-                <Icon name="User" size={18} className="mr-2" />
-                Войти
-              </Button>
-            )}
+            <Button onClick={() => navigate('/')} variant="outline" size="sm">
+              <Icon name="MessageCircle" size={18} className="mr-2" />
+              Discord
+            </Button>
           </div>
         </div>
       </nav>
@@ -224,7 +163,7 @@ const Forum = () => {
                 </Button>
               )}
             </div>
-            <Button onClick={handleCreateTopic} className="bg-primary">
+            <Button onClick={() => setShowNewTopicForm(!showNewTopicForm)} className="bg-primary">
               <Icon name="Plus" size={18} className="mr-2" />
               Создать тему
             </Button>
@@ -327,12 +266,6 @@ const Forum = () => {
           </p>
         </div>
       </footer>
-
-      <AuthDialog 
-        open={showAuthDialog} 
-        onOpenChange={setShowAuthDialog}
-        onAuthSuccess={handleAuthSuccess}
-      />
     </div>
   );
 };

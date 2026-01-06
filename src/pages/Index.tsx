@@ -147,6 +147,43 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-20 px-4">
+        <div className="container mx-auto text-center max-w-4xl">
+          <h2 className="text-5xl font-bold mb-8 text-muted-foreground/60">
+            Неоткрытые фракции
+          </h2>
+          <p className="text-lg text-muted-foreground/50 mb-8">
+            Скоро будут доступны для вступления
+          </p>
+          <Card className="bg-card/50 backdrop-blur border-border/50">
+            <CardContent className="pt-8">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="p-4 bg-muted/20 rounded-lg border border-border/50 opacity-60">
+                  <Icon name="Lock" size={24} className="mx-auto mb-2 text-muted-foreground" />
+                  <p className="text-xl font-bold text-muted-foreground">ФСИН</p>
+                </div>
+                <div className="p-4 bg-muted/20 rounded-lg border border-border/50 opacity-60">
+                  <Icon name="Lock" size={24} className="mx-auto mb-2 text-muted-foreground" />
+                  <p className="text-xl font-bold text-muted-foreground">СК РФ</p>
+                </div>
+                <div className="p-4 bg-muted/20 rounded-lg border border-border/50 opacity-60">
+                  <Icon name="Lock" size={24} className="mx-auto mb-2 text-muted-foreground" />
+                  <p className="text-xl font-bold text-muted-foreground">ФСО</p>
+                </div>
+                <div className="p-4 bg-muted/20 rounded-lg border border-border/50 opacity-60">
+                  <Icon name="Lock" size={24} className="mx-auto mb-2 text-muted-foreground" />
+                  <p className="text-xl font-bold text-muted-foreground">ФСБ</p>
+                </div>
+                <div className="p-4 bg-muted/20 rounded-lg border border-border/50 opacity-60">
+                  <Icon name="Lock" size={24} className="mx-auto mb-2 text-muted-foreground" />
+                  <p className="text-xl font-bold text-muted-foreground">СБП</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       <section className="py-20 px-4 bg-card/30">
         <div className="container mx-auto text-center max-w-4xl">
           <h2 className="text-4xl font-bold mb-12">

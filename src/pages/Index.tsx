@@ -1,12 +1,215 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import Icon from "@/components/ui/icon";
 
 const Index = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            Russian Town
+          </h1>
+          <div className="flex gap-6 items-center">
+            <button onClick={() => scrollToSection('about')} className="text-sm hover:text-primary transition-colors">
+              О сервере
+            </button>
+            <button onClick={() => scrollToSection('rules')} className="text-sm hover:text-primary transition-colors">
+              Правила
+            </button>
+            <Button onClick={() => scrollToSection('discord')} size="sm" className="bg-primary hover:bg-primary/90">
+              Discord
+            </Button>
+          </div>
+        </div>
+      </nav>
+
+      <section className="pt-32 pb-20 px-4">
+        <div className="container mx-auto text-center">
+          <div className="animate-slide-up">
+            <h1 className="text-6xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+              Russian Town
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Добро пожаловать на лучший сервер Brick Rigs в России
+            </p>
+            <div className="flex gap-4 justify-center flex-wrap">
+              <Button onClick={() => scrollToSection('discord')} size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8">
+                <Icon name="MessageCircle" size={20} className="mr-2" />
+                Присоединиться
+              </Button>
+              <Button onClick={() => scrollToSection('about')} size="lg" variant="outline" className="text-lg px-8">
+                Узнать больше
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="py-20 px-4 bg-card/30">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in">
+            О сервере
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <Card className="hover:scale-105 transition-transform duration-300 bg-card border-border">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+                  <Icon name="Users" size={24} className="text-primary" />
+                </div>
+                <CardTitle>Активное комьюнити</CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  Дружелюбные игроки всегда готовы помочь новичкам
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="hover:scale-105 transition-transform duration-300 bg-card border-border">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mb-4">
+                  <Icon name="Zap" size={24} className="text-secondary" />
+                </div>
+                <CardTitle>Стабильная работа</CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  Сервер работает 24/7 без лагов и перебоев
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="hover:scale-105 transition-transform duration-300 bg-card border-border">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+                  <Icon name="Trophy" size={24} className="text-primary" />
+                </div>
+                <CardTitle>События и турниры</CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  Регулярные мероприятия с призами для игроков
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="rules" className="py-20 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-4xl font-bold text-center mb-12">
+            Правила сервера
+          </h2>
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="bg-card border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+                1. Уважение к игрокам
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Будьте вежливы с другими игроками. Запрещены оскорбления, травля и любые формы дискриминации.
+                Создавайте дружелюбную атмосферу для всех участников сервера.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="bg-card border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+                2. Честная игра
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Использование читов, багов или эксплойтов строго запрещено. Игра должна быть честной для всех.
+                Нарушители будут заблокированы без предупреждения.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="bg-card border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+                3. Постройки и творчество
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Не разрушайте чужие постройки без разрешения владельца. Уважайте творчество других игроков.
+                Грифинг карается баном.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="bg-card border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+                4. Коммуникация
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Общайтесь на русском или английском языках. Запрещен спам, реклама других серверов и флуд в чате.
+                Используйте голосовой чат Discord для командной игры.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="bg-card border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+                5. Администрация
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Решения администрации окончательны. При конфликтах обращайтесь к модераторам в Discord.
+                Оспаривание банов только через тикет-систему.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+
+      <section id="discord" className="py-20 px-4 bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/10">
+        <div className="container mx-auto text-center max-w-3xl">
+          <div className="animate-scale-in">
+            <Icon name="MessageCircle" size={64} className="mx-auto mb-6 text-primary" />
+            <h2 className="text-4xl font-bold mb-6">
+              Присоединяйся к нашему Discord
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              Общайся с игроками, участвуй в событиях и получай последние новости о сервере
+            </p>
+            <Card className="bg-card border-border p-8 max-w-md mx-auto">
+              <CardHeader>
+                <CardTitle className="text-2xl">Discord сервер</CardTitle>
+                <CardDescription className="text-base text-muted-foreground">
+                  Здесь ты найдешь всё необходимое для игры
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center gap-3 text-left">
+                  <Icon name="Check" size={20} className="text-primary flex-shrink-0" />
+                  <span>Голосовые каналы для игры</span>
+                </div>
+                <div className="flex items-center gap-3 text-left">
+                  <Icon name="Check" size={20} className="text-primary flex-shrink-0" />
+                  <span>Помощь и поддержка 24/7</span>
+                </div>
+                <div className="flex items-center gap-3 text-left">
+                  <Icon name="Check" size={20} className="text-primary flex-shrink-0" />
+                  <span>Анонсы событий и обновлений</span>
+                </div>
+                <Button 
+                  size="lg" 
+                  className="w-full bg-primary hover:bg-primary/90 mt-6"
+                  onClick={() => window.open('https://discord.gg/your-server-link', '_blank')}
+                >
+                  <Icon name="MessageCircle" size={20} className="mr-2" />
+                  Присоединиться к Discord
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <footer className="py-8 px-4 border-t border-border">
+        <div className="container mx-auto text-center text-muted-foreground">
+          <p className="text-sm">
+            © 2026 Russian Town. Brick Rigs Server
+          </p>
+          <p className="text-xs mt-2">
+            Не является официальным продуктом Brick Rigs
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };

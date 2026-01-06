@@ -2,8 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
+  
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
@@ -23,6 +26,10 @@ const Index = () => {
             <button onClick={() => scrollToSection('rules')} className="text-sm hover:text-primary transition-colors">
               Правила
             </button>
+            <Button onClick={() => navigate('/forum')} size="sm" variant="outline">
+              <Icon name="MessageSquare" size={16} className="mr-2" />
+              Форум
+            </Button>
             <Button onClick={() => scrollToSection('discord')} size="sm" className="bg-primary hover:bg-primary/90">
               Discord
             </Button>

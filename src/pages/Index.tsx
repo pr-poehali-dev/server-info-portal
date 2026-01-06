@@ -167,24 +167,24 @@ const Index = () => {
 
             <Card className="bg-card border-border hover:scale-105 transition-transform">
               <CardHeader className="pb-4">
-                <div className="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-4">
-                  <Icon name="Shield" size={32} className="text-secondary" />
-                </div>
-                <CardTitle className="text-xl">Администратор</CardTitle>
-                <CardDescription className="text-lg font-semibold text-primary mt-2">
-                  CJ
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="bg-card border-border hover:scale-105 transition-transform">
-              <CardHeader className="pb-4">
                 <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
                   <Icon name="Crown" size={32} className="text-primary" />
                 </div>
                 <CardTitle className="text-xl">Глава проекта</CardTitle>
                 <CardDescription className="text-lg font-semibold text-primary mt-2">
                   Турист-Вагнера
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="bg-card border-border hover:scale-105 transition-transform">
+              <CardHeader className="pb-4">
+                <div className="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-4">
+                  <Icon name="Shield" size={32} className="text-secondary" />
+                </div>
+                <CardTitle className="text-xl">Администратор</CardTitle>
+                <CardDescription className="text-lg font-semibold text-primary mt-2">
+                  CJ
                 </CardDescription>
               </CardHeader>
             </Card>

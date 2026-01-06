@@ -154,6 +154,12 @@ const Forum = () => {
             </Button>
             {currentUser ? (
               <>
+                {(currentUser.role === 'creator' || currentUser.role === 'admin') && (
+                  <Button onClick={() => navigate('/admin')} variant="secondary" size="sm">
+                    <Icon name="Settings" size={18} className="mr-2" />
+                    Админ-панель
+                  </Button>
+                )}
                 <div className="flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-lg">
                   {currentUser.role === 'creator' && <Icon name="Crown" size={16} className="text-primary" />}
                   {currentUser.role === 'admin' && <Icon name="Shield" size={16} className="text-secondary" />}

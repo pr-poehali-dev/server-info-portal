@@ -192,6 +192,45 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-20 px-4">
+        <div className="container mx-auto text-center max-w-4xl">
+          <h2 className="text-4xl font-bold mb-12">
+            Генералы фракций
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            <Card className="bg-gradient-to-br from-primary/10 to-card border-primary/30 hover:scale-105 transition-transform">
+              <CardHeader className="pb-4">
+                <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4 border-2 border-primary/40">
+                  <Icon name="Construction" size={36} className="text-primary" />
+                </div>
+                <CardTitle className="text-2xl">Генерал ЦОДД</CardTitle>
+                <CardDescription className="text-lg font-bold text-primary mt-3">
+                  Турист-Вагнера
+                </CardDescription>
+                <CardDescription className="text-sm text-muted-foreground mt-2">
+                  Управление дорожным движением
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="bg-gradient-to-br from-secondary/10 to-card border-secondary/30 hover:scale-105 transition-transform">
+              <CardHeader className="pb-4">
+                <div className="w-20 h-20 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-4 border-2 border-secondary/40">
+                  <Icon name="Swords" size={36} className="text-secondary" />
+                </div>
+                <CardTitle className="text-2xl">Генерал Армии</CardTitle>
+                <CardDescription className="text-lg font-bold text-secondary mt-3">
+                  Pancake
+                </CardDescription>
+                <CardDescription className="text-sm text-muted-foreground mt-2">
+                  Командование вооружёнными силами
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       <section id="rules" className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold text-center mb-12">
